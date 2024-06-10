@@ -91,7 +91,7 @@ s := "host is: /hname/"
 	Key: "/hname/",
 	Function: func(s string, i int) string {
 		name, _ := os.Hostname()
-        return name
+		return name
 	},
 }).Apply(&s)
 // host is: yourhost.name
@@ -113,7 +113,7 @@ s := "cats cats dog cats"
 			return "cats"
 		}
 		return ""
-    },
+	},
 }).Apply(&s)
 // cats cats cat cats
 ```
