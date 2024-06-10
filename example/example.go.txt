@@ -1,0 +1,36 @@
+package main
+
+import (
+	"fmt"
+	"os"
+
+	"github.com/razorsh4rk/tempe"
+)
+
+func main() {
+	s := "here is my file: {file.txt}"
+
+	template := tempe.Sub{
+		Key:    "{.*}",
+		Regex:  true,
+		Repeat: true,
+		Function: func(s string, i int) string {
+			(&tempe.Sub{
+				Key:    "({|})",
+				Value:  "",
+				Regex:  true,
+				Repeat: true,
+			}).Apply(&s)
+
+			fname, _ := os.Getwd()
+			fname = fname + "/" + s
+
+			content, _ := os.ReadFile(fname)
+			return string(content)
+		},
+	}
+
+	template.Apply(&s)
+
+	fmt.Println(s)
+}
