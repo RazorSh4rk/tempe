@@ -1,6 +1,6 @@
 # tempe
 
-`go get github.com/razorsh4rk/tempe`
+`go get github.com/RazorSh4rk/tempe`
 
 Replace string templates with functions
 

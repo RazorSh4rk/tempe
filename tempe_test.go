@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/razorsh4rk/tempe"
+	"github.com/RazorSh4rk/tempe"
 )
 
 // replace a string with an other string
@@ -88,7 +88,6 @@ func TestRegexSingle(t *testing.T) {
 		Repeat: false,
 	}).Apply(&s)
 
-	fmt.Println(s)
 	if s != "cats cats cats cats" {
 		t.Fail()
 	}
@@ -114,7 +113,6 @@ func TestRegexSingleFn(t *testing.T) {
 		},
 	}).Apply(&s)
 
-	fmt.Println(s)
 	if s != "cats cats cat cats" {
 		t.Fail()
 	}
